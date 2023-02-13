@@ -7,11 +7,18 @@ The endangered Lake Chubsucker (*Erimyzon sucetta*) calls the OAC home and we we
 ## Materials Needed
 - Raspberry Pi Zero W 
 - Raspberry Pi HQ camera 
-- Raspberry Pi ___ lense
-- WittyPi 
+- Raspberry Pi 6mm 3MP wide angle lense
+- WittyPi 3 rev2
+- Arduino uno 
+- Gravity: Analog Dissolved Oxygen Sensor / Meter kit for Arduino
+- Waterproof DS18B20 digital temperature sensor
+- lithium ion battery pack
 
 ## Camera construction guide
 ### Configure your Raspberry Pi
+
+### Configure your Arduino
+connect your arduino to your RPi using the USB cable provided and the USB to micro USB adapter
 
 ### Connect the camera 
 
