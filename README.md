@@ -6,6 +6,7 @@ The endangered Lake Chubsucker (*Erimyzon sucetta*) calls the OAC home and we we
 
 ## Materials Needed
 - Raspberry Pi Zero W 
+- formatted SD card
 - Raspberry Pi HQ camera 
 - Raspberry Pi 6mm 3MP wide angle lense
 - WittyPi 3 rev2
@@ -17,14 +18,31 @@ The endangered Lake Chubsucker (*Erimyzon sucetta*) calls the OAC home and we we
 ## Camera construction guide
 ### Configure your Raspberry Pi
 
+If you're not familiar with Raspberry Pi computers I recommend following the Raspberry Pi foundations tutorials to set it up (link). 
+
+### Configure the power supply
+
+connect the witty pi 
+
+connect the lithium ion battery
+
+
 ### Configure your Arduino
 connect your arduino to your RPi using the USB cable provided and the USB to micro USB adapter
 
 ### Connect the camera 
 
-### 
+replace the cable that the camera comes with with the other one and connect it to the camera port 
+
+### Connect the sensors 
+
+### Load the 
 
 ## Deployment tips
 
 ## Next steps 
 ### Adjusting dissolved oxygen values 
+
+## Other resources 
+
+I highly recommend [this guide] (https://raspberrypi-guide.github.io/) and associated review paper as a general resource for using Raspberry Pi computers for science projects. 
