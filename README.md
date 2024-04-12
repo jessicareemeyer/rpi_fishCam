@@ -5,38 +5,45 @@ The endangered Lake Chubsucker (*Erimyzon sucetta*) calls the OAC home and we we
 <img src="https://user-images.githubusercontent.com/46727953/217915085-d2625f1f-6942-4adc-a481-6d837d14668a.png" width="600"/>
 
 ## Materials Needed
-- Raspberry Pi Zero W 
+- [Raspberry Pi Zero W] (https://www.raspberrypi.com/products/raspberry-pi-zero-w/) 
 - formatted SD card
-- Raspberry Pi HQ camera 
+- Raspberry Pi HQ camera
+- camera cable adaptor
 - Raspberry Pi 6mm 3MP wide angle lense
-- WittyPi 3 rev2
-- Arduino uno 
-- Gravity: Analog Dissolved Oxygen Sensor / Meter kit for Arduino
+- [WittyPi 3 rev2] (https://www.uugear.com/product/witty-pi-3-realtime-clock-and-power-management-for-raspberry-pi/) 
+- [Arduino uno board] (https://store-usa.arduino.cc/products/arduino-uno-rev3?selectedStore=us)
+- [Gravity: Analog Dissolved Oxygen Sensor / Meter kit for Arduino] (https://www.dfrobot.com/product-1628.html) or [name] (https://atlas-scientific.com/kits/surveyor-analog-do-kit/)
 - Waterproof DS18B20 digital temperature sensor
-- lithium ion battery pack
+- [lithium ion battery pack] (https://www.pishop.ca/product/lithium-ion-battery-pack-3-7v-6600mah/)
 
 ## Camera construction guide
 ### Configure your Raspberry Pi
 
-If you're not familiar with Raspberry Pi computers I recommend following the Raspberry Pi foundations tutorials to set it up (link). 
+If you're not familiar with Raspberry Pi (rpi) computers I recommend following the [Raspberry Pi foundations tutorials] (https://www.raspberrypi.com/documentation/computers/getting-started.html) to set it up. You will need to format an sd card with Raspberry Pi OS and solder header pins to the pi if it did not come with them (in order to attache the WittyPi board). 
 
 ### Configure the power supply
 
-connect the witty pi 
+For this project I used a lithium ion battery connected directly to the WittyPi board as shown below. The WittyPi board can be loaded with a schedule script that automatically turns your Pi on and off. I did this to conserve battery power, so that I could deploy my cameras for a week at a time. However, if you want your pi to run continuously after deployment, you don't need to use the WittyPi. You could simply get a power bank from your local outdoors shop and connect it to your pi directly with a usb cable. 
 
-connect the lithium ion battery
+(add photo of wittypi and battery connected)
 
+### Prepare the DO sensor 
+
+Information about the DO sensor can be found [here] (https://wiki.dfrobot.com/Gravity__Analog_Dissolved_Oxygen_Sensor_SKU_SEN0237) and [here] (https://atlas-scientific.com/kits/surveyor-analog-do-kit/). The tip of the sensor will need to be filled with the appropriate solution (check the documentation of the sensor you have for instructions). 
 
 ### Configure your Arduino
-connect your arduino to your RPi using the USB cable provided and the USB to micro USB adapter
+
+This project uses an arduino board to collect dissolved oxygen and temperature data, and passes that data to the rpi over i2c through a usb cable. Connect the sensors as shown in the diagram below. Then connect the arduino to a computer with the arduino IDO installed (you can also do this on the rpi). Install the "atlas_gravity.zip", "OneWire-master.zip", and "Arduino-Temperature-Control_Library-master.zip" files (located in this project folder) as libraries to your arduino IDE (sketch > include library > Add .ZIP Library...). Then you can download the "temp_do_combined.ino" file from this project folder and upload it to your arduino through the IDE. 
+ 
+To calibrate your DO sensor, open the serial plotter under the "tools" tab and select a baud rate of 9600 then type CAL. This will set the 100% DO calibration for your sensor. 
 
 ### Connect the camera 
 
-replace the cable that the camera comes with with the other one and connect it to the camera port 
+The camera cable that comes with the rpi camera does not fit with the rpi zero board, so we need to swap it out for the adaptor. If you are using a different raspberry pi board (not a zero) you don't need to do this. This project uses an older camera and legacy camera support needs to be enabled in the rpi configuration for it to work. If you are using a newer camera you won't need to do that, but the python scripts used in this project probably won't work and would need to be adjusted. 
 
-### Connect the sensors 
+### Add the python scripts to the rpi
 
-### Load the 
+### Schedule the python scripts 
 
 ## Deployment tips
 
@@ -45,4 +52,4 @@ replace the cable that the camera comes with with the other one and connect it t
 
 ## Other resources 
 
-I highly recommend [this guide] (https://raspberrypi-guide.github.io/) and associated review paper as a general resource for using Raspberry Pi computers for science projects. 
+I highly recommend [this guide] (https://raspberrypi-guide.github.io/) and [associated review paper] (https://doi.org/10.1111/2041-210X.13652) as a general resource for using Raspberry Pi computers for science projects. 
