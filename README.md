@@ -5,31 +5,29 @@ The endangered Lake Chubsucker (*Erimyzon sucetta*) calls the OAC home and we we
 <img src="https://user-images.githubusercontent.com/46727953/217915085-d2625f1f-6942-4adc-a481-6d837d14668a.png" width="600"/>
 
 ## Materials Needed
-- [Raspberry Pi Zero W] (https://www.raspberrypi.com/products/raspberry-pi-zero-w/) 
+- [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) 
 - formatted SD card
 - Raspberry Pi HQ camera
 - camera cable adaptor
 - Raspberry Pi 6mm 3MP wide angle lense
-- [WittyPi 3 rev2] (https://www.uugear.com/product/witty-pi-3-realtime-clock-and-power-management-for-raspberry-pi/) 
-- [Arduino uno board] (https://store-usa.arduino.cc/products/arduino-uno-rev3?selectedStore=us)
-- [Gravity: Analog Dissolved Oxygen Sensor / Meter kit for Arduino] (https://www.dfrobot.com/product-1628.html) or [name] (https://atlas-scientific.com/kits/surveyor-analog-do-kit/)
+- [WittyPi 3 rev2](https://www.uugear.com/product/witty-pi-3-realtime-clock-and-power-management-for-raspberry-pi/) 
+- [Arduino uno board](https://store-usa.arduino.cc/products/arduino-uno-rev3?selectedStore=us)
+- [Gravity: Analog Dissolved Oxygen Sensor / Meter kit for Arduino](https://www.dfrobot.com/product-1628.html) or [Atlas Scientific Analog DO kit](https://atlas-scientific.com/kits/surveyor-analog-do-kit/)
 - Waterproof DS18B20 digital temperature sensor
-- [lithium ion battery pack] (https://www.pishop.ca/product/lithium-ion-battery-pack-3-7v-6600mah/)
+- [lithium ion battery pack](https://www.pishop.ca/product/lithium-ion-battery-pack-3-7v-6600mah/)
 
 ## Camera construction guide
 ### Configure your Raspberry Pi
 
-If you're not familiar with Raspberry Pi (rpi) computers I recommend following the [Raspberry Pi foundations tutorials] (https://www.raspberrypi.com/documentation/computers/getting-started.html) to set it up. You will need to format an sd card with Raspberry Pi OS and solder header pins to the pi if it did not come with them (in order to attache the WittyPi board). 
+If you're not familiar with Raspberry Pi (rpi) computers I recommend following the [Raspberry Pi foundations tutorials](https://www.raspberrypi.com/documentation/computers/getting-started.html) to set it up. You will need to format an sd card with Raspberry Pi OS and solder header pins to the pi if it did not come with them (in order to attache the WittyPi board). 
 
 ### Configure the power supply
 
-For this project I used a lithium ion battery connected directly to the WittyPi board as shown below. The WittyPi board can be loaded with a schedule script that automatically turns your Pi on and off. I did this to conserve battery power, so that I could deploy my cameras for a week at a time. However, if you want your pi to run continuously after deployment, you don't need to use the WittyPi. You could simply get a power bank from your local outdoors shop and connect it to your pi directly with a usb cable. 
-
-(add photo of wittypi and battery connected)
+For this project I used a lithium ion battery connected directly to the WittyPi board. The WittyPi board can be loaded with a schedule script that automatically turns your Pi on and off (see the documentation for the WittyPi [here](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.uugear.com/doc/WittyPi3Rev2_UserManual.pdf)). I did this to conserve battery power, so that I could deploy my cameras for a week at a time. However, if you want your pi to run continuously after deployment, you don't need to use the WittyPi. You could simply get a power bank from your local outdoors shop and connect it to your pi directly with a usb cable. 
 
 ### Prepare the DO sensor 
 
-Information about the DO sensor can be found [here] (https://wiki.dfrobot.com/Gravity__Analog_Dissolved_Oxygen_Sensor_SKU_SEN0237) and [here] (https://atlas-scientific.com/kits/surveyor-analog-do-kit/). The tip of the sensor will need to be filled with the appropriate solution (check the documentation of the sensor you have for instructions). 
+Information about the DO sensor can be found [here](https://wiki.dfrobot.com/Gravity__Analog_Dissolved_Oxygen_Sensor_SKU_SEN0237) and [here](https://atlas-scientific.com/kits/surveyor-analog-do-kit/). The tip of the sensor will need to be filled with the appropriate solution (check the documentation of the sensor you have for instructions). 
 
 ### Configure your Arduino
 
@@ -43,12 +41,29 @@ The camera cable that comes with the rpi camera does not fit with the rpi zero b
 
 ### Add the python scripts to the rpi
 
+For my project I creased a folder called "python_scripts" in the home directory. I placed two python scripts in it called: "temp_DO_logging.py" and "video_recording.py". These files are available in this project folder. The "temp_DO_logging.py" script takes the data from the arduino and writes it to a csv file in the "sensor_data" folder in the home directory. The 
+
 ### Schedule the python scripts 
 
-## Deployment tips
+I scheduled the rpi to run the above python scripts every 4 hours from 7am to 7pm by setting up cron jobs. [This website] has an excellent guide of how to do this. For my project I edited the cron file (in terminal type: crontab -e) with the following: 
 
-## Next steps 
-### Adjusting dissolved oxygen values 
+>2 7 * * * python /home/pi/python_scripts/temp_DO_logging.py
+>5 7 * * * python /home/pi/python_scripts/video_recording.py
+
+>2 11 * * * python /home/pi/python_scripts/temp_DO_logging.py
+>5 11 * * * python /home/pi/python_scripts/temp_DO_logging.py
+
+>2 15 * * * python /home/pi/python_scripts/temp_DO_logging.py
+>5 15 * * * python /home/pi/python_scripts/temp_DO_logging.py
+
+>2 19 * * * python /home/pi/python_scripts/temp_DO_logging.py
+>5 19 * * * python /home/pi/python_scripts/temp_DO_logging.py
+
+### Hardware housing
+
+I placed the camera, rpi, and everything associated with it in a clear lunch container with a locking lid. To allow the DO sensor and temperature sensor to sit in the water, I drilled a hole in the lid of the container and ran the cables through it (I then sealed the hole with marine epoxy). 
+
+The set up was quite boyant so I build platforms out of ABS and PVS pipes and fittings that I filled with pea gravel. 
 
 ## Other resources 
 
