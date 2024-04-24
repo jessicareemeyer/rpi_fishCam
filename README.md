@@ -23,13 +23,13 @@ The camera design was originally inspired by this paper: [FishCam: A low-cost op
 ## Camera construction guide
 ### Configure your Raspberry Pi
 
-If you're not familiar with Raspberry Pi (rpi) computers I recommend following the [Raspberry Pi foundations tutorials](https://www.raspberrypi.com/documentation/computers/getting-started.html) to set it up. You will need to format an sd card with Raspberry Pi OS and solder header pins to the pi if it did not come with them (in order to attache the WittyPi board). 
+If you're not familiar with Raspberry Pi (rpi) computers I recommend following the [Raspberry Pi foundations tutorials](https://www.raspberrypi.com/documentation/computers/getting-started.html) to set it up. You will need to format an sd card with Raspberry Pi OS and solder header pins to the pi if it did not come with them (in order to attach the WittyPi board). 
 
 ---
 
 ### Configure the power supply
 
-For this project I used a lithium ion battery connected directly to the WittyPi board. The WittyPi board can be loaded with a schedule script that automatically turns your Pi on and off (see the documentation for the WittyPi [here](https://www.uugear.com/doc/WittyPi3Rev2_UserManual.pdf)). I did this to conserve battery power, so that I could deploy my cameras for a week at a time. However, if you want your pi to run continuously after deployment, you don't need to use the WittyPi. You could simply get a power bank from your local outdoors shop and connect it to your pi directly with a usb cable. 
+For this project I used a lithium ion battery connected directly to the WittyPi board. The WittyPi board can be loaded with a schedule script that automatically turns your Pi on and off (see the documentation for the WittyPi [here](https://www.uugear.com/doc/WittyPi3Rev2_UserManual.pdf)). I did this to conserve battery power and memory, so that I could deploy my cameras for a week at a time. However, if you want your pi to run continuously after deployment, you don't need to use the WittyPi. You could simply get a power bank from your local outdoors shop and connect it to your pi directly with a usb cable. 
 
 ---
 
