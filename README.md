@@ -16,18 +16,26 @@ The endangered Lake Chubsucker (*Erimyzon sucetta*) calls the OAC home and we we
 - Waterproof DS18B20 digital temperature sensor
 - [lithium ion battery pack](https://www.pishop.ca/product/lithium-ion-battery-pack-3-7v-6600mah/)
 
+---
+
 ## Camera construction guide
 ### Configure your Raspberry Pi
 
 If you're not familiar with Raspberry Pi (rpi) computers I recommend following the [Raspberry Pi foundations tutorials](https://www.raspberrypi.com/documentation/computers/getting-started.html) to set it up. You will need to format an sd card with Raspberry Pi OS and solder header pins to the pi if it did not come with them (in order to attache the WittyPi board). 
 
+---
+
 ### Configure the power supply
 
 For this project I used a lithium ion battery connected directly to the WittyPi board. The WittyPi board can be loaded with a schedule script that automatically turns your Pi on and off (see the documentation for the WittyPi [here](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.uugear.com/doc/WittyPi3Rev2_UserManual.pdf)). I did this to conserve battery power, so that I could deploy my cameras for a week at a time. However, if you want your pi to run continuously after deployment, you don't need to use the WittyPi. You could simply get a power bank from your local outdoors shop and connect it to your pi directly with a usb cable. 
 
-### Prepare the DO sensor 
+---
+
+### Prepare the Dissolved Oxygen (DO) sensor 
 
 Information about the DO sensor can be found [here](https://wiki.dfrobot.com/Gravity__Analog_Dissolved_Oxygen_Sensor_SKU_SEN0237) and [here](https://atlas-scientific.com/kits/surveyor-analog-do-kit/). The tip of the sensor will need to be filled with the appropriate solution (check the documentation of the sensor you have for instructions). 
+
+---
 
 ### Configure your Arduino
 
@@ -35,13 +43,19 @@ This project uses an arduino board to collect dissolved oxygen and temperature d
  
 To calibrate your DO sensor, open the serial plotter under the "tools" tab and select a baud rate of 9600 then type CAL. This will set the 100% DO calibration for your sensor. 
 
+---
+
 ### Connect the camera 
 
 The camera cable that comes with the rpi camera does not fit with the rpi zero board, so we need to swap it out for the adaptor. If you are using a different raspberry pi board (not a zero) you don't need to do this. This project uses an older camera and legacy camera support needs to be enabled in the rpi configuration for it to work. If you are using a newer camera you won't need to do that, but the python scripts used in this project probably won't work and would need to be adjusted. 
 
+---
+
 ### Add the python scripts to the rpi
 
 For my project I creased a folder called "python_scripts" in the home directory. I placed two python scripts in it called: "temp_DO_logging.py" and "video_recording.py". These files are available in this project folder. The "temp_DO_logging.py" script takes the data from the arduino and writes it to a csv file in the "sensor_data" folder in the home directory. The 
+
+---
 
 ### Schedule the python scripts 
 
@@ -63,11 +77,15 @@ I scheduled the rpi to run the above python scripts every 4 hours from 7am to 7p
 
 >5 19 * * * python /home/pi/python_scripts/temp_DO_logging.py
 
+---
+
 ### Hardware housing
 
 I placed the camera, rpi, and everything associated with it in a clear lunch container with a locking lid. To allow the DO sensor and temperature sensor to sit in the water, I drilled a hole in the lid of the container and ran the cables through it (I then sealed the hole with marine epoxy). 
 
 The set up was quite boyant so I build platforms out of ABS and PVS pipes and fittings that I filled with pea gravel. 
+
+---
 
 ## Other resources 
 
