@@ -48,15 +48,19 @@ For my project I creased a folder called "python_scripts" in the home directory.
 I scheduled the rpi to run the above python scripts every 4 hours from 7am to 7pm by setting up cron jobs. [This website] has an excellent guide of how to do this. For my project I edited the cron file (in terminal type: crontab -e) with the following: 
 
 >2 7 * * * python /home/pi/python_scripts/temp_DO_logging.py
+
 >5 7 * * * python /home/pi/python_scripts/video_recording.py
 
 >2 11 * * * python /home/pi/python_scripts/temp_DO_logging.py
+
 >5 11 * * * python /home/pi/python_scripts/temp_DO_logging.py
 
 >2 15 * * * python /home/pi/python_scripts/temp_DO_logging.py
+
 >5 15 * * * python /home/pi/python_scripts/temp_DO_logging.py
 
 >2 19 * * * python /home/pi/python_scripts/temp_DO_logging.py
+
 >5 19 * * * python /home/pi/python_scripts/temp_DO_logging.py
 
 ### Hardware housing
