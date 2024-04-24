@@ -4,7 +4,7 @@ This reposity describes the materials and methods used to build an underwater ca
 The endangered Lake Chubsucker (*Erimyzon sucetta*) calls the OAC home and we were able to use these cameras to capture them across the channel. As seen here in this example still of two adult Lake Chubsucker:
 <img src="https://user-images.githubusercontent.com/46727953/217915085-d2625f1f-6942-4adc-a481-6d837d14668a.png" width="600"/>
 
-The camera design was originally inspired by this paper: [FishCam: A low-cost open source autonomous camera for aquatic research](https://doi-org.proxy3.library.mcgill.ca/10.1016/j.ohx.2020.e00110). I highly recommend giving it a read if you're interested in building a camera yourself to do this type of work. 
+The camera design was originally inspired by this paper: [FishCam: A low-cost open source autonomous camera for aquatic research](https://doi.org/10.1016/j.ohx.2020.e00110). I highly recommend giving it a read if you're interested in building a camera yourself to do this type of work. 
 
 ## Materials Needed
 - [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) 
@@ -29,7 +29,7 @@ If you're not familiar with Raspberry Pi (rpi) computers I recommend following t
 
 ### Configure the power supply
 
-For this project I used a lithium ion battery connected directly to the WittyPi board. The WittyPi board can be loaded with a schedule script that automatically turns your Pi on and off (see the documentation for the WittyPi [here](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.uugear.com/doc/WittyPi3Rev2_UserManual.pdf)). I did this to conserve battery power, so that I could deploy my cameras for a week at a time. However, if you want your pi to run continuously after deployment, you don't need to use the WittyPi. You could simply get a power bank from your local outdoors shop and connect it to your pi directly with a usb cable. 
+For this project I used a lithium ion battery connected directly to the WittyPi board. The WittyPi board can be loaded with a schedule script that automatically turns your Pi on and off (see the documentation for the WittyPi [here](https://www.uugear.com/doc/WittyPi3Rev2_UserManual.pdf)). I did this to conserve battery power, so that I could deploy my cameras for a week at a time. However, if you want your pi to run continuously after deployment, you don't need to use the WittyPi. You could simply get a power bank from your local outdoors shop and connect it to your pi directly with a usb cable. 
 
 ---
 
