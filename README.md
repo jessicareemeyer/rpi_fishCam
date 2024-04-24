@@ -89,4 +89,4 @@ The set up was quite boyant so I build platforms out of ABS and PVS pipes and fi
 
 ## Other resources 
 
-I highly recommend [this guide] (https://raspberrypi-guide.github.io/) and [associated review paper] (https://doi.org/10.1111/2041-210X.13652) as a general resource for using Raspberry Pi computers for science projects. 
+I highly recommend [this guide](https://raspberrypi-guide.github.io/) and [associated review paper](https://doi.org/10.1111/2041-210X.13652) as a general resource for using Raspberry Pi computers for science projects. 
