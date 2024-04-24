@@ -1,8 +1,10 @@
 # Detecting endangered fish with an underwater lense 🐟
-This reposity describes the materials and methods used to build an underwater camera equipped with water quality sensors (temperature and dissolved oxygen) using Raspberry Pi and Arduino. The set ups described below were tested and deployed in the Old Ausable Channel (OAC) in Lambton Shores, Ontario 🇨🇦. The OAC is a narrow, low flow freshwater stream near the south shore of Lake Huron. Due to its natural history the OAC contains a high level of freshwater fish diversity and is home to multiple fish species-at-risk. 
+This reposity describes the materials and methods used to build an underwater camera equipped with water quality sensors (temperature and dissolved oxygen) using Raspberry Pi and Arduino. The set ups described below were tested and deployed in the Old Ausable Channel (OAC) in Lambton Shores, Ontario 🇨🇦 near and within Pinery Provincial Park. The OAC is a narrow, low flow freshwater stream near the south shore of Lake Huron. Due to its natural history the OAC contains a high level of freshwater fish diversity and is home to multiple fish Species-at-Risk. 
 
 The endangered Lake Chubsucker (*Erimyzon sucetta*) calls the OAC home and we were able to use these cameras to capture them across the channel. As seen here in this example still of two adult Lake Chubsucker:
 <img src="https://user-images.githubusercontent.com/46727953/217915085-d2625f1f-6942-4adc-a481-6d837d14668a.png" width="600"/>
+
+The camera design was originally inspired by this paper: [FishCam: A low-cost open source autonomous camera for aquatic research](https://doi-org.proxy3.library.mcgill.ca/10.1016/j.ohx.2020.e00110). I highly recommend giving it a read if you're interested in building a camera yourself to do this type of work. 
 
 ## Materials Needed
 - [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) 
@@ -86,6 +88,10 @@ I placed the camera, rpi, and everything associated with it in a clear lunch con
 The set up was quite boyant so I build platforms out of ABS and PVS pipes and fittings that I filled with pea gravel. 
 
 ---
+
+### Questions?
+
+If you're building a camera like the one detailed here and have questions you can contact me here: jessica.reemeyer [[at]] mail.mcgill.ca
 
 ## Other resources 
 
