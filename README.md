@@ -85,7 +85,7 @@ I scheduled the rpi to run the above python scripts every 4 hours from 7am to 7p
 
 I placed the camera, rpi, and everything associated with it in a clear lunch container with a locking lid. To allow the DO sensor and temperature sensor to sit in the water, I drilled a hole in the lid of the container and ran the cables through it (I then sealed the hole with marine epoxy). 
 
-The set up was quite boyant so I build platforms out of ABS and PVS pipes and fittings that I filled with pea gravel. 
+The set up was quite boyant so I built platforms out of ABS and PVS pipes and fittings that I filled with pea gravel. 
 
 ---
 
